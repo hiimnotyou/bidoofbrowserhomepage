@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bidoof Browser</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+    .logo {
+      font-size: 24px;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .search-bar {
+      width: 60%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+    }
+    .search-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bidoof Browser</h1>
+    <p>Bidoof browser on top frfr</p>
+    
+    <input type="text" class="search-bar" id="searchInput" placeholder="Search with DuckDuckGo...">
+    
+    <button class="search-btn" onclick="searchDuckDuckGo()">Search</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome script (replace with your actual link) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+  <script>
+    function searchDuckDuckGo() {
+      var searchTerm = document.getElementById('searchInput').value;
+      if (searchTerm.trim() !== '') {
+        var duckDuckGoURL = 'https://duckduckgo.com/?q=' + encodeURIComponent(searchTerm);
+        window.location.href = duckDuckGoURL;
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        searchDuckDuckGo();
+      }
+    });
+  </script>
+
+</body>
+</html>
